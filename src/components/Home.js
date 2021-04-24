@@ -1,5 +1,5 @@
-import { connect } from 'react-redux';
 import React, { useState, useEffect } from 'react';
+import HomeMain from './HomeMain';
 
 const Home = () => {
     let [list, setList] = useState([]);
@@ -11,7 +11,7 @@ const Home = () => {
             .then(json => {
                 let filterJson = json.filter(item => item.id <= 3);
                 setList(list = filterJson.map((item, index) => {
-                    let urlImg = `./img/journaling${index}.jpg`;
+                    let urlImg = `./img/journaling1${index}.jpg`;
                     return (
                         <div key={index} className={(index===0) ? "carousel-item active" : "carousel-item"}>
                             <img src={urlImg} className="d-block w-100" alt="..." style={{height: "60vh", objectFit: "cover"}}/>
@@ -36,30 +36,8 @@ const Home = () => {
     }, []);
 
     return(
-        <main>
-            <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div className="carousel-inner">
-                    {list}
-                </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Prev</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
-            </div>
-            <div className="container">
-                <div className="row text-center">{quotes}</div>
-            </div>
-        </main>
+        <HomeMain listAtr={list} quotesAtr={quotes}/>
     );
 }
 
-export default connect()(Home);
+export default Home;
