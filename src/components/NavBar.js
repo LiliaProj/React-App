@@ -20,10 +20,10 @@ function NavBar(){
               <div className="navbar-nav">
                 <a className="nav-link active" href="#" onClick={(e)=>{
                   setComponent([<Home key="homeKey"/>]);
-                  activeButton(e.target)}}>Home</a>
+                  activeButton(e.target)}}>Home (functional component)</a>
                 <a className="nav-link" href="#" onClick={(e)=>{
                   setComponent([<ToDoList key="toDoKey"/>]);
-                  activeButton(e.target)}}>To do list</a>
+                  activeButton(e.target)}}>To do list (class component)</a>
               </div>
             </div>
           </div>
