@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Home from './Home';
-import ToDoList from './ToDoList';
+import ToDoAdd from './ToDoAdd';
 import activeButton from './utils/activeButton';
 
 function NavBar(){
@@ -22,7 +22,7 @@ function NavBar(){
                   setComponent([<Home key="homeKey"/>]);
                   activeButton(e.target)}}>Home (functional component)</a>
                 <a className="nav-link" href="#" onClick={(e)=>{
-                  setComponent([<ToDoList key="toDoKey"/>]);
+                  setComponent([<ToDoAdd key="toDoKey"/>]);
                   activeButton(e.target)}}>To do list (class component)</a>
               </div>
             </div>
