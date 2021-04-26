@@ -16,3 +16,9 @@ export const removeTask = (id) => {
         payload: id
     }
 }
+export const selectEditTask = (task) => {
+    return {
+        type: 'SELECT_TASK',
+        payload: task
+    }
+}
